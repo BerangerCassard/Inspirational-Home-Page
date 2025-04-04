@@ -2,21 +2,28 @@ import React, { useState, useEffect } from 'react';
 
 function RandomImage() {
     const [image, setImage] = useState(null);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const accessKey = '34m6xGvvYRl6Gs5jsSHZIvkoVZfGUxkZ2WyD96CsE6A';
 
     const fetchRandomImage = async () => {
         try {
+            setLoading(true);
             const response = await fetch('https://api.unsplash.com/photos/random', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Client-ID ${accessKey}`,
                 },
             });
+            if (!response.ok) {
+                throw new Error('Erreur lors du chargement de l\'image');
+            }
             const data = await response.json();
             setImage(data);
+            setLoading(false);
         } catch (error) {
             setError(error.message);
+            setLoading(false);
         }
     };
 
@@ -24,18 +31,34 @@ function RandomImage() {
         fetchRandomImage();
     }, []);
 
+    const handleNewImage = () => {
+        fetchRandomImage();
+    };
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+
     return (
-        <>
-            {error && <div>Error: {error}</div>}
-            {!image ? (
-                <div>Loading...</div>
-            ) : (
-                <img 
-                    src={image.urls.regular} 
-                    alt={image.description || 'Random Image'}
-                />
+        <div className="image-container">
+            {image && (
+                <>
+                    <img 
+                        src={image.urls.regular}
+                        alt={`Photo par ${image.user.name}`}
+                        style={{ maxWidth: '100%', height: 'auto' }}
+                    />
+                    <p>Photo par : {image.user.name}</p>
+                    <button onClick={handleNewImage}>
+                        Charger une nouvelle image
+                    </button>
+                </>
             )}
-        </>
+        </div>
     );
 }
 
