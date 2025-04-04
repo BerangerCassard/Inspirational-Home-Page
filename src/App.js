@@ -1,12 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import RandomImage from './components/RandomImage';
 
 function App() {
   return (
     <div className="App">
-
+      <RandomImage />
     </div>
   );
 }
