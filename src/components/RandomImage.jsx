@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '../index.css';
 
 function RandomImage() {
     const [image, setImage] = useState(null);
@@ -45,7 +44,7 @@ function RandomImage() {
     }
 
     return (
-        <div className="">
+        <div className="w-full">
             {image && (
                 <>
                     <img 
