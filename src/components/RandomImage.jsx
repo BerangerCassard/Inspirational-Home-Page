@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { ArrowPathIcon } from '@heroicons/react/24/outline';
 
 function RandomImage() {
     const [image, setImage] = useState(null);
@@ -47,18 +48,19 @@ function RandomImage() {
         <div className="w-full">
             {image && (
                 <>
-                    <img 
+                    <img
+                        className="w-full h-auto"
                         src={image.urls.regular}
                         alt={`Photo par ${image.user.name}`}
                         style={{ maxWidth: '100%', height: 'auto' }}
                     />
-                    <p>Photo by : {image.user.name}</p>
-                    <button 
-                    className="bg-blue-500 text-white px-4 py-2 rounded-md"
-                    onClick={handleNewImage}
-                    >
-                        Charger une nouvelle image
-                    </button>
+                    <div className="flex justify-center mt-4 flex-col items-center">
+                    <p className="text-center my-2">Photo by : {image.user.name}</p>
+                        <ArrowPathIcon 
+                        className="w-8 h-8" 
+                        onClick={handleNewImage}
+                        />
+                    </div>
                 </>
             )}
         </div>
