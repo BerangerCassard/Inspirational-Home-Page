@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../index.css';
 
 function RandomImage() {
     const [image, setImage] = useState(null);
@@ -44,7 +45,7 @@ function RandomImage() {
     }
 
     return (
-        <div className="image-container">
+        <div className="">
             {image && (
                 <>
                     <img 
@@ -52,8 +53,11 @@ function RandomImage() {
                         alt={`Photo par ${image.user.name}`}
                         style={{ maxWidth: '100%', height: 'auto' }}
                     />
-                    <p>Photo par : {image.user.name}</p>
-                    <button onClick={handleNewImage}>
+                    <p>Photo by : {image.user.name}</p>
+                    <button 
+                    className="bg-blue-500 text-white px-4 py-2 rounded-md"
+                    onClick={handleNewImage}
+                    >
                         Charger une nouvelle image
                     </button>
                 </>
