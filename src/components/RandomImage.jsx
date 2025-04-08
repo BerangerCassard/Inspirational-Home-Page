@@ -45,19 +45,19 @@ function RandomImage() {
     }
 
     return (
-        <div className="w-full">
+        <div className="w-full h-screen overflow-hidden">
             {image && (
                 <>
                     <img
-                        className="w-full h-auto"
+                        className="w-screen h-screen object-cover"
                         src={image.urls.regular}
                         alt={`Photo par ${image.user.name}`}
                         style={{ maxWidth: '100%', height: 'auto' }}
                     />
-                    <div className="flex justify-center mt-4 flex-col items-center">
-                    <p className="text-center my-2">Photo by : {image.user.name}</p>
+                    <div className="flex justify-center mt-4 flex-col items-center fixed bottom-0 w-full bg-slate-400 bg-opacity-50">
+                        <p className="text-center my-2 text-white">Photo by : {image.user.name}</p>
                         <ArrowPathIcon 
-                        className="w-8 h-8" 
+                        className="w-8 h-8 text-white" 
                         onClick={handleNewImage}
                         />
                     </div>
