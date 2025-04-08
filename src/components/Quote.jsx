@@ -10,14 +10,12 @@ function Quote() {
             setLoading(true);
             setError(null);
             
-            const response = await fetch('https://api.quotable.io/random', {
+            const response = await fetch('https://api.quotable.io/random?tags=inspirational', {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',
                 },
-                mode: 'cors',
             });
-            
             if (!response.ok) {
                 throw new Error(`Erreur HTTP: ${response.status}`);
             }
