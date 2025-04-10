@@ -15,7 +15,7 @@ function App() {
           <div className="absolute top-0 right-0 z-10">
             <Weather />
           </div>
-          <div className="absolute inset-0 flex items-center justify-center z-20">
+          <div className="absolute inset-0 flex z-20">
             <TaskInput />
           </div>
         </div>
