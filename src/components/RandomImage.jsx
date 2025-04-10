@@ -45,7 +45,7 @@ function RandomImage() {
     }
 
     return (
-        <div className="w-full h-screen overflow-hidden">
+        <div className="w-full h-screen overflow-hidden relative">
             {image && (
                 <>
                     <img
