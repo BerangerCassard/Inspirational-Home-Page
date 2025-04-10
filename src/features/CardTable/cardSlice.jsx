@@ -10,15 +10,15 @@ export const cardSlice = createSlice({
     addCard: (state, action) => {
       state.cards.push({
         id: uuidv4(),
-        text: ''
+        content: action.payload.content || 'Contenu de la carte',
       });
     },
     removeCard: (state, action) => {
       state.cards = state.cards.filter((card) => card.id !== action.payload);
     },
+  
   },
 });
-
 
 export const { addCard, removeCard } = cardSlice.actions;
 export default cardSlice.reducer;

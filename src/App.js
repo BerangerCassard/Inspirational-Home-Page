@@ -5,6 +5,7 @@ import RandomImage from './components/RandomImage';
 import Quote from './components/Quote';
 import Weather from './components/Weather';
 import TaskInput from './features/Bar/Bar';
+import { CardTable } from './features/CardTable/CardTable';
 
 function App() {
   return (
