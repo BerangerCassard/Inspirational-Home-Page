@@ -11,7 +11,9 @@ function Card({ card }) {
 
   return (
     <div className="bg-white rounded-lg shadow-md p-4 mb-4">
-      <p className="text-gray-600">{card.content || 'Aucun contenu'}</p>
+      <p className="text-gray-600">
+       {card.content.content}
+      </p>
       <button 
         onClick={() => dispatch(removeCard(card.id))}
         className="mt-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"

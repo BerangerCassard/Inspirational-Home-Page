@@ -9,7 +9,7 @@ export function CardTable() {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       {cards.map((card) => (
-        <Card key={card.id} card={card.content} />
+        <Card key={card.id} card={card} />
       ))}
     </div>
   );
