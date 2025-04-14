@@ -1,11 +1,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { store } from './app/store';
+import { store }  from './app/store';
 import RandomImage from './components/RandomImage';
 import Quote from './components/Quote';
 import Weather from './components/Weather';
 import TaskInput from './features/Bar/Bar';
-import { CardTable } from './features/CardTable/CardTable';
+import Card from './features/CardTable/Card';
 
 function App() {
   return (
@@ -18,6 +18,9 @@ function App() {
           </div>
           <div className="absolute inset-0 flex z-20">
             <TaskInput />
+          </div>
+          <div className="absolute inset-0 flex z-20 container mx-auto items-center justify-center h-screen">
+            <Card />
           </div>
         </div>
         <Quote />
