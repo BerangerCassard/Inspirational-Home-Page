@@ -5,7 +5,7 @@ import RandomImage from './components/RandomImage';
 import Quote from './components/Quote';
 import Weather from './components/Weather';
 import TaskInput from './features/Bar/Bar';
-import Card from './features/CardTable/Card';
+import {CardTable} from './features/CardTable/CardTable';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
             <TaskInput />
           </div>
           <div className="absolute inset-0 flex z-20 container mx-auto items-center justify-center h-screen">
-            <Card />
+            <CardTable />
           </div>
         </div>
         <Quote />

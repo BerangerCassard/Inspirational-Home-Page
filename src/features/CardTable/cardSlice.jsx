@@ -10,7 +10,7 @@ export const cardSlice = createSlice({
     addCard: (state, action) => {
       state.cards.push({
         id: uuidv4(),
-        content: action.payload.content || 'Contenu de la carte',
+        content: action.payload || 'Contenu de la carte',
       });
     },
     removeCard: (state, action) => {

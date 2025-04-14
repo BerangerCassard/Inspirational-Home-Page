@@ -2,18 +2,20 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setText, clearText } from './barSlice';
 import { addCard } from '../CardTable/cardSlice';
+import { useState } from 'react';
 
 const TaskInput = () => {
-  const text = useSelector((state) => state.bar.text); // Sélectionne le texte depuis Redux
+
+  const [text, setText] = useState('');
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addCard({text: text}));
+    dispatch(addCard({content: text}));
   };
 
   const handleChange = (e) => {
-    dispatch(setText(e.target.value)); // Met à jour le texte dans Redux
+    setText(e.target.value); // Met à jour le texte dans Redux
   };
 
   const handleClear = () => {
