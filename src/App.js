@@ -11,15 +11,16 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <div className="relative">
+        <div className="relative h-full w-full">
           <RandomImage />
           <div className="absolute top-0 right-0 z-10">
             <Weather />
           </div>
-          <div className="absolute inset-0 flex z-20 h-89">
+          <div id="task-input-container" className="absolute top-1/3 left-1/2 transform -translate-x-1/2 z-20 w-full px-4
+          ">
             <TaskInput />
           </div>
-          <div id="card-table-container" className="absolute inset-0 flex z-20 container mx-auto items-center justify-center h-89 max-w-xs">
+          <div id="card-table-container" className="absolute inset-0 flex z-10 container mx-auto items-center justify-center h-89 max-w-3xl h-1/3 border-2 border-blue-500">
             <CardTable />
           </div>
         </div>
