@@ -7,7 +7,7 @@ export function CardTable() {
   const cards = useSelector((state) => state.card.cards);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div id="card-table" className="flex flex-col items-center justify-center h-screen max-w-xs">
       {cards.map((card) => (
         <Card key={card.id} card={card} />
       ))}

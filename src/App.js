@@ -19,7 +19,7 @@ function App() {
           <div className="absolute inset-0 flex z-20">
             <TaskInput />
           </div>
-          <div className="absolute inset-0 flex z-20 container mx-auto items-center justify-center h-screen">
+          <div id="card-table-container" className="absolute inset-0 flex z-20 container mx-auto items-center justify-center h-screen max-w-xs">
             <CardTable />
           </div>
         </div>
