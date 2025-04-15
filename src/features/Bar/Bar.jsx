@@ -11,7 +11,8 @@ const TaskInput = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addCard({content: text}));
+    dispatch(addCard(text));
+    setText('');
   };
 
   const handleChange = (e) => {
@@ -29,6 +30,9 @@ const TaskInput = () => {
         <div className="flex flex-col space-y-4">
           <form onSubmit={handleSubmit}>
             <input 
+                id="task-input"
+                name="task-input"
+                required
                 type="text" 
                 value={text} 
                 onChange={handleChange} 
@@ -37,7 +41,7 @@ const TaskInput = () => {
             /> 
             <button 
               type="submit"
-              className="w-full bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 transition-colors pt-px mt-8"
+              className="w-full bg-indigo-500 text-white py-3 px-4 rounded-md hover:bg-indigo-600 transition-colors pt-px mt-8"
             >
              Ajouter
             </button>
