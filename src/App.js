@@ -16,10 +16,10 @@ function App() {
           <div className="absolute top-0 right-0 z-10">
             <Weather />
           </div>
-          <div className="absolute inset-0 flex z-20">
+          <div className="absolute inset-0 flex z-20 h-89">
             <TaskInput />
           </div>
-          <div id="card-table-container" className="absolute inset-0 flex z-20 container mx-auto items-center justify-center h-screen max-w-xs">
+          <div id="card-table-container" className="absolute inset-0 flex z-20 container mx-auto items-center justify-center h-89 max-w-xs">
             <CardTable />
           </div>
         </div>

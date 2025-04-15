@@ -12,7 +12,7 @@ function Card({ card }) {
   return (
     <div className="bg-white rounded-lg shadow-md p-4 mb-4">
       <p className="text-gray-600">
-       {card.content.content}
+       {card.content}
       </p>
       <button 
         onClick={() => dispatch(removeCard(card.id))}
