@@ -34,9 +34,11 @@ function App() {
 
           <div
             id="card-table-container"
-            className="absolute inset-0 flex items-center justify-center z-10 border-2 border-blue-500"
+            className="absolute inset-9 z-10 border-2 border-blue-500 h-[30%] top-[50%]"
           >
-            <CardTable />
+            <CardTable 
+              className="flex gap-4 flex-row"
+            />
           </div>
         </div>
 

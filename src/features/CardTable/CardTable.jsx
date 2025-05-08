@@ -7,9 +7,9 @@ export function CardTable() {
   const cards = useSelector((state) => state.card.cards);
 
   return (
-    <div id="card-table" className=" border-red-500">
+    <div id="card-table" className=" w-1/5 border-red-500">
       {cards.map((card) => (
-        <Card key={card.id} card={card} />
+        <Card key={card.id} card={card} className="bg-white p-4 rounded shadow" />
       ))}
     </div>
   );
